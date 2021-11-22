@@ -1,1 +1,1 @@
-﻿netload "PgAutoCAD.dll" 
+netload PgAutoCAD.dll

@@ -3,11 +3,12 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 
+
 using Autodesk.AutoCAD.ApplicationServices;
 using Autodesk.AutoCAD.EditorInput;
 using Autodesk.AutoCAD.Runtime;
 
-[assembly: CommandClass(typeof(PgAutoCAD.Commands))]
+//[assembly: CommandClass(typeof(PgAutoCAD.Commands))]
 
 namespace PgAutoCAD
 {
@@ -19,5 +20,11 @@ namespace PgAutoCAD
             Editor ed = Application.DocumentManager.MdiActiveDocument.Editor;
             ed.WriteMessage("\nİlk komut oluşturuldu");
         }
+
+        //[CommandMethod("ShowBlockTableRecord")]
+        //public void ShowBlockTableRecordCommand()
+        //{
+        //    Bolum4.ShowBlockTableRecords();
+        //}
     }
 }
