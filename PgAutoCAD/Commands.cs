@@ -21,6 +21,12 @@ namespace PgAutoCAD
             ed.WriteMessage("\nİlk komut oluşturuldu");
         }
 
+        [CommandMethod("MajorVersiyon")]
+        public void AcadMajorVersiyon()
+        {
+            var majorVersion = Autodesk.AutoCAD.ApplicationServices.Application.Version.Major;
+            Autodesk.AutoCAD.ApplicationServices.Application.DocumentManager.MdiActiveDocument.Editor.WriteMessage($"\nMajor versiyon: {majorVersion}");
+        }
         //[CommandMethod("ShowBlockTableRecord")]
         //public void ShowBlockTableRecordCommand()
         //{

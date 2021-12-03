@@ -15,6 +15,8 @@ namespace PgAutoCAD
         {
             // 1. Autocad aktif belgesine erişim  
             Document doc = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument;
+            Database db1 = Autodesk.AutoCAD.ApplicationServices.Core.Application.DocumentManager.MdiActiveDocument.Database;
+            Database db2 = Autodesk.AutoCAD.DatabaseServices.HostApplicationServices.WorkingDatabase;
             // 2. İşlem yığının başlatılması  
             using (Transaction transaction = doc.TransactionManager.StartTransaction())
             {

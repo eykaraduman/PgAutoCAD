@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using Autodesk.AutoCAD.ApplicationServices;
+using Autodesk.AutoCAD.Colors;
 using Autodesk.AutoCAD.DatabaseServices;
 using Autodesk.AutoCAD.Geometry;
 using Autodesk.AutoCAD.Runtime;
@@ -28,9 +29,7 @@ namespace PgAutoCAD
                 (BlockTableRecord)transactionManager.
                     GetObject(blockTable[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
             // 6. Autocad daire nesnesinin oluşturulması  
-            Circle circle = new Circle();
-            circle.Center = new Point3d(0.0, 0.0, 0.0);
-            circle.Radius = 10.0;
+            Circle circle = new Circle {Center = new Point3d(0.0, 0.0, 0.0), Radius = 10.0};
             // 7. Model uzayı blok tablo kaydına daire nesnesinin eklenmesi  
             ObjectId circleId = blockTableRecord.AppendEntity(circle);
             // 8. Daire nesnesinin işlem yığınına eklenmesi  
