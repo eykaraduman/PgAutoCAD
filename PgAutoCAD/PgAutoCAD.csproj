@@ -67,6 +67,7 @@
     </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
+    <None Include="cd-database-helper.cd" />
     <None Include="start.scr">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </None>

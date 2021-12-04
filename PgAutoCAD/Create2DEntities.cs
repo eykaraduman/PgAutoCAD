@@ -36,7 +36,7 @@ namespace PgAutoCAD
             {
                 // Blok tablosunun okuma amaçlı ve
                 // ModelSpace blok tablosu kaydının ise yazma amaçlı açılması 
-                BlockTable bt = (BlockTable)db.BlockTableId.GetObject(OpenMode.ForRead);
+                BlockTable bt = (BlockTable) db.BlockTableId.GetObject(OpenMode.ForRead);
                 BlockTableRecord btr =
                     (BlockTableRecord) doc.TransactionManager.GetObject(bt[BlockTableRecord.ModelSpace],
                         OpenMode.ForWrite);
@@ -48,7 +48,7 @@ namespace PgAutoCAD
 
                 // Çizginin blok tablo kaydına eklenmesi
                 //btr.UpgradeOpen();
-                btr.AppendEntity(line);
+                ObjectId lineId = btr.AppendEntity(line);
                 // Çizginin işlme yığınına eklenmesi
                 tr.AddNewlyCreatedDBObject(line, true);
                 // İşlem yığınının onaylanması

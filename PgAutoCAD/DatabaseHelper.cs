@@ -72,7 +72,7 @@ namespace PgAutoCAD
         /// <param name="space">Varlığın ekleneceği uzay.</param>
         /// <param name="db">Veritabanı.</param>
         /// <returns>Nesne kimliği.</returns>
-        internal static ObjectId AddToSpace(this Entity entity, AcadSpace space, Database db = null)
+        public static ObjectId AddToSpace(this Entity entity, AcadSpace space, Database db = null)
         {
             db = db ?? HostApplicationServices.WorkingDatabase;
 
@@ -110,7 +110,7 @@ namespace PgAutoCAD
         /// <param name="space">Varlıkların ekleneceği uzay.</param>
         /// <param name="db">Veritabanı.</param>
         /// <returns>Nesnelerin kimlikleri.</returns>
-        internal static ObjectId[] AddToSpace(this IEnumerable<Entity> entities, AcadSpace space, Database db = null)
+        public static ObjectId[] AddToSpace(this IEnumerable<Entity> entities, AcadSpace space, Database db = null)
         {
             db = db ?? HostApplicationServices.WorkingDatabase;
 
