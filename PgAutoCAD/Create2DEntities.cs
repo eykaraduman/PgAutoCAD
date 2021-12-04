@@ -37,7 +37,9 @@ namespace PgAutoCAD
                 // Blok tablosunun okuma amaçlı ve
                 // ModelSpace blok tablosu kaydının ise yazma amaçlı açılması 
                 BlockTable bt = (BlockTable)db.BlockTableId.GetObject(OpenMode.ForRead);
-                BlockTableRecord btr = (BlockTableRecord)doc.TransactionManager.GetObject(bt[BlockTableRecord.ModelSpace], OpenMode.ForWrite);
+                BlockTableRecord btr =
+                    (BlockTableRecord) doc.TransactionManager.GetObject(bt[BlockTableRecord.ModelSpace],
+                        OpenMode.ForWrite);
 
                 // Çizgi nesnesinin oluşturulması
                 Point3d startPnt = new Point3d(1.0, 0.0, 0.0);
@@ -52,6 +54,15 @@ namespace PgAutoCAD
                 // İşlem yığınının onaylanması
                 tr.Commit();
             } // İşlem yığınının sonlandırılması
+        }
+
+        [CommandMethod("DrawLine1Yeni")]
+        public void DrawLine1Yeni()
+        {
+            Point3d startPnt = new Point3d(1.0, 0.0, 0.0);
+            Point3d endPnt = new Point3d(4.0, 0.0, 0.0);
+            Line line = new Line(startPnt, endPnt);
+            line.AddToModelSpace();
         }
     }
 }
